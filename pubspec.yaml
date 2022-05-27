@@ -1,6 +1,6 @@
 name: circles_rate
 description: Allow your users to rate something in a circled shaped fashion.
-version: 0.1.0
+version: 0.1.0+1
 homepage: https://github.com/DanielJaramillo94/circles_rate
 issue_tracker: https://github.com/DanielJaramillo94/circles_rate/issues
 
