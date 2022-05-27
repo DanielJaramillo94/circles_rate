@@ -11,7 +11,10 @@ class CircleIndicator extends StatelessWidget {
     this.textColor,
   }) : super(key: key);
 
+  /// Index of the circle.
   final int index;
+
+  /// Whether this circle is selected or not.
   final bool isSelected;
   final double? circleRadius;
   final Color? borderColor;

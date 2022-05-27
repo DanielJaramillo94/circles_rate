@@ -16,15 +16,33 @@ class CirclesRate extends StatefulWidget {
     this.labels,
   }) : super(key: key);
 
+  /// Index of the circle that will not be displayed. It is mandatory if
+  /// [labels] is not null.
   final int? avoidCircleNumber;
+
+  /// Number of circles to display.
   final int numberOfCircles;
+
+  /// The first circle is the one placed at 0 radians if this is null or zero.
   final int? indexOffset;
+
+  /// Indicator widgets are displayed counterclockwise if true.
   final bool? isReversed;
+
+  /// This triggers when user select new indicator widget.
   final Function(int selectedIndex)? onIndexChanged;
+
+  /// Widget that is displayed at the center of indicator widgets.
   final Widget? Function(BuildContext context, int? index)? centerWidgetBuilder;
+
   //TODO: remove nullable (affect tests)
+  /// Widget that is displayed at the indicator for the user to change the rate.
   final Widget Function(int index, int? selectedIndex)? indicator;
+
+  /// Distance from the center to the leftmost side of the indicator widget.
+  /// This is the radius in case the indicator widget is a circle.
   final double? indicatorRadius;
+
   final Labels? labels;
 
   @override
