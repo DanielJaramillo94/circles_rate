@@ -14,14 +14,14 @@ class CirclesBuilder extends StatelessWidget {
   final bool isReversed;
   final Function(int selectedIndex)? onIndexChanged;
   final Widget Function(int index, int? selectedIndex) indicator;
-  final double? indicatorRadious;
+  final double? indicatorRadius;
   final Labels? labels;
 
   CirclesBuilder({
     Key? key,
     required this.numberOfCircles,
     required this.indicator,
-    this.indicatorRadious,
+    this.indicatorRadius,
     this.avoidCircleNumber,
     this.selectedIndex,
     this.onIndexChanged,
@@ -51,7 +51,7 @@ class CirclesBuilder extends StatelessWidget {
               if (labels != null) {
                 return LabelsBuilder(
                   angle: indicatorAngle,
-                  indicatorRadious: indicatorRadious,
+                  indicatorRadius: indicatorRadius,
                   labels: labels,
                 );
               }

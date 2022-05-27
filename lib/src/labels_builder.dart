@@ -5,13 +5,13 @@ import 'package:circles_rate/src/utils.dart';
 import 'package:flutter/material.dart';
 
 class LabelsBuilder extends StatelessWidget {
-  final double? indicatorRadious;
+  final double? indicatorRadius;
   final double angle;
   final Labels? labels;
 
   const LabelsBuilder({
     Key? key,
-    this.indicatorRadious,
+    this.indicatorRadius,
     required this.angle,
     required this.labels,
   }) : super(key: key);
@@ -19,25 +19,25 @@ class LabelsBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      var _indicatorRadious = indicatorRadious ?? constraints.maxWidth / 6;
-      var centerDistance = constraints.maxWidth - _indicatorRadious;
-      var radiousFactor = centerDistance / constraints.maxWidth;
+      var _indicatorRadius = indicatorRadius ?? constraints.maxWidth / 6;
+      var centerDistance = constraints.maxWidth - _indicatorRadius;
+      var radiusFactor = centerDistance / constraints.maxWidth;
       var labelAngle = findLabelAngle(
         centerDistance: centerDistance,
-        tangentDistance: _indicatorRadious,
+        tangentDistance: _indicatorRadius,
       );
       return Stack(
         children: [
           Align(
             alignment: Utils.getFixedAlignment(
-              radiousFactor: radiousFactor,
+              radiusFactor: radiusFactor,
               radians: angle - labelAngle,
             ),
             child: labels?.greatLabel,
           ),
           Align(
             alignment: Utils.getFixedAlignment(
-              radiousFactor: radiousFactor,
+              radiusFactor: radiusFactor,
               radians: angle + labelAngle,
             ),
             child: labels?.lowLabel,

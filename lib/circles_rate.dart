@@ -12,7 +12,7 @@ class CirclesRate extends StatefulWidget {
     this.indexOffset,
     this.isReversed,
     this.indicator,
-    this.indicatorRadious,
+    this.indicatorRadius,
     this.labels,
   }) : super(key: key);
 
@@ -24,7 +24,7 @@ class CirclesRate extends StatefulWidget {
   final Widget? Function(BuildContext context, int? index)? centerWidgetBuilder;
   //TODO: remove nullable (affect tests)
   final Widget Function(int index, int? selectedIndex)? indicator;
-  final double? indicatorRadious;
+  final double? indicatorRadius;
   final Labels? labels;
 
   @override
@@ -48,7 +48,7 @@ class _CirclesRateState extends State<CirclesRate> {
           CirclesBuilder(
             numberOfCircles: widget.numberOfCircles,
             indicator: widget.indicator!,
-            indicatorRadious: widget.indicatorRadious,
+            indicatorRadius: widget.indicatorRadius,
             avoidCircleNumber: widget.avoidCircleNumber,
             labels: widget.labels,
             selectedIndex: currentIndex,

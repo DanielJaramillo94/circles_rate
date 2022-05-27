@@ -30,7 +30,7 @@ Install the package and then depend on in. You can customize the widget changing
 * **indexOffset**: offset that allows to shift indexes.
 * **isReversed**: boolean that allows to render indicator widgets counterclockwise 
 * **indicator**: widget to be displayed as selector to the user. It can be used ``CircleIndicator`` widget, that is part of this library.
-* **indicatorRadious**: radious of the indicator widget
+* **indicatorRadius**: radius of the indicator widget
 * **labels**: labels to be displayed on the ``avoidCircleNumber`` position. it receibes a ``Labels`` parameter. Check ``labels.dart`` example on ``/example`` folder.
 
 ```dart

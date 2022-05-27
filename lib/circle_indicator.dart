@@ -5,7 +5,7 @@ class CircleIndicator extends StatelessWidget {
     Key? key,
     required this.index,
     required this.isSelected,
-    this.circleRadious,
+    this.circleRadius,
     this.borderColor,
     this.backgroundColor,
     this.textColor,
@@ -13,7 +13,7 @@ class CircleIndicator extends StatelessWidget {
 
   final int index;
   final bool isSelected;
-  final double? circleRadious;
+  final double? circleRadius;
   final Color? borderColor;
   final Color? backgroundColor;
   final Color? textColor;
@@ -25,14 +25,14 @@ class CircleIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        double _circleRadious = circleRadious ?? constraints.maxWidth / 6;
+        double _circleRadius = circleRadius ?? constraints.maxWidth / 6;
 
         return AnimatedContainer(
           duration: const Duration(milliseconds: 200),
-          height: _circleRadious,
-          width: _circleRadious,
+          height: _circleRadius,
+          width: _circleRadius,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(_circleRadious),
+            borderRadius: BorderRadius.circular(_circleRadius),
             color: backgroundColor ?? defaultBackgroundColor,
             border: Border.all(
               color: borderColor ?? Colors.blue,
@@ -43,7 +43,7 @@ class CircleIndicator extends StatelessWidget {
             child: Text(
               index.toString(),
               style: TextStyle(
-                fontSize: _circleRadious * 0.35,
+                fontSize: _circleRadius * 0.35,
                 color: textColor ?? defaultTextColor,
                 fontWeight: FontWeight.bold,
               ),
@@ -56,12 +56,12 @@ class CircleIndicator extends StatelessWidget {
 
   BoxDecoration getSelectedCircleDecoration(
     BuildContext context, {
-    required double circleRadious,
+    required double circleRadius,
     required int circleIndex,
     required bool isSelected,
   }) {
     BoxDecoration unselectedBoxDecoration = BoxDecoration(
-      borderRadius: BorderRadius.circular(circleRadious),
+      borderRadius: BorderRadius.circular(circleRadius),
       border: Border.all(
         color: Theme.of(context).primaryColor,
         width: 2,
@@ -70,7 +70,7 @@ class CircleIndicator extends StatelessWidget {
     if (!isSelected) return unselectedBoxDecoration;
     if (circleIndex < 4 && isSelected) {
       return BoxDecoration(
-        borderRadius: BorderRadius.circular(circleRadious),
+        borderRadius: BorderRadius.circular(circleRadius),
         color: Theme.of(context).errorColor,
         border: Border.all(
           color: Theme.of(context).errorColor,
@@ -79,17 +79,17 @@ class CircleIndicator extends StatelessWidget {
       );
     } else if (circleIndex < 7 && isSelected) {
       return BoxDecoration(
-        borderRadius: BorderRadius.circular(circleRadious),
+        borderRadius: BorderRadius.circular(circleRadius),
         color: const Color(0xFFE57B00),
       );
     } else if (circleIndex < 9 && isSelected) {
       return BoxDecoration(
-        borderRadius: BorderRadius.circular(circleRadious),
+        borderRadius: BorderRadius.circular(circleRadius),
         color: const Color(0xFFFFC400),
       );
     } else if (circleIndex >= 9 && isSelected) {
       return BoxDecoration(
-        borderRadius: BorderRadius.circular(circleRadious),
+        borderRadius: BorderRadius.circular(circleRadius),
         color: Theme.of(context).primaryColor,
       );
     } else {
