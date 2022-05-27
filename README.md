@@ -1,6 +1,6 @@
 [![pub package](https://img.shields.io/pub/v/circles_rate.svg)](https://pub.dev/packages/circles_rate)
 
-Allow your users to rate something in a different fashion.
+Allow your users to rate something in a circled shaped fashion.
 
 ## Features
 
